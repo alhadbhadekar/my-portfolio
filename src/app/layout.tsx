@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   description: siteMeta.description,
   metadataBase: new URL(siteMeta.url),
   icons: {
-    icon: 'my-portfolio/logo.png',
-    shortcut: 'my-portfolio/logo.png',
-    apple: 'my-portfolio/logo.png',
+    icon: 'logo.png',
+    shortcut: 'logo.png',
+    apple: 'logo.png',
   },
   openGraph: {
     title: siteMeta.title,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: siteMeta.title,
     images: [
       {
-        url: "my-portfolio/logo.png",
+        url: "logo.png",
         width: 1200,
         height: 630,
       },
