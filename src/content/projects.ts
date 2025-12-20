@@ -17,7 +17,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "React", "TypeScript", "CSS", "GitHub Pages"],
     links: {
         github: "https://github.com/alhadbhadekar/my-portfolio",
-        demo: "https://yourhandle.github.io/my-portfolio"
+        demo: "https://alhadbhadekar.github.io/my-portfolio/"
     }
   },
   {
