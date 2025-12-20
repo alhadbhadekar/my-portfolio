@@ -20,7 +20,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       <div style={{ display: "flex", gap: 10, marginTop: 14, flexWrap: "wrap" }}>
         {project.links?.github ? (
-          <a className="btn" href={project.links.github} target="_blank" rel="noreferrer"><img src="/skills/github.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} /></a>
+          <a className="btn" href={project.links.github} target="_blank" rel="noreferrer"><img src="skills/github.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} /></a>
         ) : null}
         {project.links?.demo ? (
             <a
@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noreferrer"
             >
-                <img src="/skills/demo.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
+                <img src="skills/demo.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
             </a>
             ) : null}
         {project.links?.writeup ? (
