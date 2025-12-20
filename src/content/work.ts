@@ -2,6 +2,7 @@ export const work = [
   {
     id: "comcast",
     company: "Comcast",
+    logo: "companies/comcast.png",
     title: "Software Development Engineer III",
     location: "Philadelphia, PA",
     range: "Feb 2023 — Present",
@@ -68,6 +69,7 @@ export const work = [
   {
     id: "pelmorex",
     company: "Pelmorex Corp (The Weather Network)",
+    logo: "companies/pelmorex.png",
     title: "Software Developer",
     location: "Toronto, Canada",
     range: "Nov 2021 — Feb 2023",
@@ -108,6 +110,7 @@ export const work = [
   {
     id: "habitat-learn",
     company: "The Habitat Learn",
+    logo: "companies/habitat_learn.png",
     title: "Backend Developer",
     location: "Toronto, Canada",
     range: "Aug 2020 — Nov 2021",
@@ -142,6 +145,7 @@ export const work = [
   {
     id: "rbc-security",
     company: "Royal Bank of Canada",
+    logo: "companies/RBC.png",
     title: "Senior Network Security Analyst / Python Developer",
     location: "Toronto, Canada",
     range: "Feb 2019 — Jul 2020",
@@ -178,6 +182,7 @@ export const work = [
   {
     id: "secure-sense",
     company: "Secure Sense Solutions",
+    logo: "companies/s3.webp",
     title: "Tier 2 Network Analyst",
     location: "Toronto, Canada",
     range: "Feb 2018 — Feb 2019",
@@ -200,6 +205,7 @@ export const work = [
   {
     id: "forsythe",
     company: "Forsythe Technology",
+    logo: "companies/forsythe.webp",
     title: "Analyst II",
     location: "Toronto, Canada",
     range: "May 2017 — Jan 2018",
@@ -215,6 +221,7 @@ export const work = [
   {
     id: "trustwave",
     company: "Trustwave",
+    logo: "companies/trustwave.jpeg",
     title: "TAC Analyst",
     location: "Toronto, Canada",
     range: "Aug 2016 — May 2017",
@@ -238,6 +245,7 @@ export const work = [
   {
     id: "checkpoint",
     company: "Check Point Software Technologies",
+    logo: "companies/checkpoint.jpeg",
     title: "Tier-2 Network Security Support Engineer",
     location: "Mumbai, India",
     range: "Jan 2016 — Aug 2016",
