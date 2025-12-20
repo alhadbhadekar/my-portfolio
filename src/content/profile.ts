@@ -20,7 +20,7 @@ export const profile = {
   ],
   email: "alhad.bhadekar@gmail.com",
   links: {
-    github: "https://alhad-bhadekar.netlify.app/",
+    github: "https://github.com/alhadbhadekar",
     linkedin: "https://www.linkedin.com/in/alhadb/"
   },
 
