@@ -2,8 +2,16 @@ import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import { posts } from "@/content/blog";
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = posts.find((p) => p.slug === params.slug);
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function BlogPostPage({ params }: PageProps) {
+  const { slug } = await params;
+
+  const post = posts.find((p) => p.slug === slug);
   if (!post) return notFound();
 
   return (
