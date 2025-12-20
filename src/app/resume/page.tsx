@@ -6,10 +6,10 @@ export default function ResumePage() {
     <Section title="Resume" subtitle="Download the PDF or view it in a new tab.">
       <div className="card cardPad">
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <a className="btn btnPrimary" href="/resume.pdf" download>
+          <a className="btn btnPrimary" href="resume.pdf" download>
             Download Resume (PDF)
           </a>
-          <a className="btn" href="/resume.pdf" target="_blank" rel="noreferrer">
+          <a className="btn" href="resume.pdf" target="_blank" rel="noreferrer">
             Open in New Tab
           </a>
           
@@ -20,7 +20,7 @@ export default function ResumePage() {
             rel="noreferrer"
             style={{ display: "flex", alignItems: "center", gap: 8 }}
           >
-            <img src="/skills/linkedin.svg" alt="" style={{ width: 18, height: 18 }} />
+            <img src="skills/linkedin.svg" alt="" style={{ width: 18, height: 18 }} />
             LinkedIn Profile
           </a>
         </div>
@@ -44,7 +44,7 @@ export default function ResumePage() {
                 rel="noreferrer"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <img src="/skills/linkedin.svg" alt="LinkedIn" style={{ width: 20, height: 20 }} />
+                <img src="skills/linkedin.svg" alt="LinkedIn" style={{ width: 20, height: 20 }} />
               </a>
             </p>
 
@@ -58,7 +58,7 @@ export default function ResumePage() {
                 rel="noreferrer"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <img src="/skills/github.png" alt="GitHub" style={{ width: 20, height: 20 }} />
+                <img src="skills/github.png" alt="GitHub" style={{ width: 20, height: 20 }} />
               </a>
             </p>
           </div>

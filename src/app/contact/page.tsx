@@ -42,7 +42,7 @@ export default function ContactPage() {
               rel="noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "8px" }}
             >
-              <img src="/skills/linkedin.svg" alt="" style={{ width: "18px", height: "18px" }} />
+              <img src="skills/linkedin.svg" alt="" style={{ width: "18px", height: "18px" }} />
               LinkedIn
             </a>
 
@@ -54,7 +54,7 @@ export default function ContactPage() {
               rel="noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "8px" }}
             >
-              <img src="/skills/github.png" alt="" style={{ width: "18px", height: "18px" }} />
+              <img src="skills/github.png" alt="" style={{ width: "18px", height: "18px" }} />
               GitHub
             </a>
           </div>
