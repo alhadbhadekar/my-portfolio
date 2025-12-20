@@ -33,6 +33,10 @@ import {
   SiConcourse
 } from "react-icons/si";
 
+import { HiOutlineCpuChip } from "react-icons/hi2";
+import { MdAutoAwesome } from "react-icons/md";
+import { SiOpenai } from "react-icons/si";
+
 export const skillSections = [
   {
     title: "AI & Machine Learning",
@@ -66,7 +70,22 @@ export const skillSections = [
       {
         label: "MLOps",
         note: "Model versioning, retraining & deployment",
+        icon: <HiOutlineCpuChip />
+      },
+      {
+        label: "MCP",
+        note: "Model versioning, retraining & deployment",
+        icon: <SiOpenai />
+      },
+      {
+        label: "CrewAI",
+        note: "Model versioning, retraining & deployment",
         icon: <FaRobot />
+      },
+      {
+        label: "AutoGen",
+        note: "Model versioning, retraining & deployment",
+        icon: <MdAutoAwesome />
       }
     ]
   },

@@ -26,7 +26,7 @@ export default function ThemeToggle() {
 
   return (
     <button className="btn" onClick={toggle} type="button" aria-label="Toggle theme">
-      {theme === "dark" ? "🌙" : "☀️"} <span className="small">{theme === "dark" ? "Dark" : "Light"}</span>
+      {theme === "dark" ? "☀️" : "🌙"} <span className="small">{theme === "dark" ? "Light" : "Dark"}</span>
     </button>
   );
 }

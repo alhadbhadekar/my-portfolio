@@ -37,9 +37,9 @@ const HOME_SKILLS = [
   { name: "MongoDB", img: "/skills/mongodb.png" },
   { name: "Elasticsearch", img: "/skills/elasticsearch.svg" },
   { name: "Kibana", img: "/skills/kibana.png" },
-  { name: "Grafana", img: "/skills/grafana.svg" },
-  { name: "Jenkins", img: "/skills/elasticsearch.svg" },
-  { name: "Concourse", img: "/skills/grafana.svg" },
+  { name: "Grafana", img: "/skills/grafana.webp" },
+  { name: "Jenkins", img: "/skills/jenkins.png" },
+  { name: "Concourse", img: "/skills/concourse.svg" },
 ];
 
 export default function HomePage() {
@@ -209,14 +209,20 @@ export default function HomePage() {
         {/* Removed inline gridTemplateColumns to allow CSS to handle stacking */}
         <div className="featured-layout" style={{ display: "grid", gap: 20 }}>
           {/* Projects (Column 1) */}
-          <div className="grid3">
+          <div className="grid3 featured-projects">
             {featuredProjects.map((p, index) => (
               <ProjectCard key={`home-${p.slug}-${index}`} project={p} />
             ))}
           </div>
 
+          <div className="featured-cta" style={{ marginTop: 0 }}>
+            <Link className="btn" href="/projects">
+              See all projects →
+            </Link>
+          </div>
+
           {/* Quick Links / Explore More (Column 2) */}
-          <div className="card cardPad">
+          <div className="card cardPad featured-explore">
             <p className="sectionTitle">Explore More</p>
             <div style={{ display: "grid", gap: 12 }}>
               <Link className="timelineItem" href="/bio">
@@ -244,11 +250,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div style={{ marginTop: 20 }}>
-          <Link className="btn" href="/projects">
-            See all projects →
-          </Link>
-        </div>
+        
       </Section>
     </>
   );

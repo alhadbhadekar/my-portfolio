@@ -678,3 +678,20 @@ img, svg, video {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Desktop order (unchanged) */
+.featured-projects { order: 1; }
+.featured-explore  { order: 2; }
+.featured-cta      { order: 3; }
+
+/* Mobile order */
+@media (max-width: 980px) {
+  .featured-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-projects { order: 1; }
+  .featured-cta      { order: 2; } /* MOVE BUTTON UP */
+  .featured-explore  { order: 3; }
+}
