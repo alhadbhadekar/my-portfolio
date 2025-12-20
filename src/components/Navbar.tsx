@@ -37,7 +37,7 @@ export default function Navbar() {
           <Link href="/" className="brand" onClick={() => setOpen(false)}>
             <div className="badge" aria-hidden="true" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/logo.png" 
+                src="logo.png" 
                 alt="Logo" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
               />
