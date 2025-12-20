@@ -2,10 +2,21 @@ import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import { posts } from "@/content/blog";
 
+export const dynamic = "force-static";
+
 interface PageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+/**
+ * REQUIRED for `output: "export"`
+ */
+export async function generateStaticParams() {
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
