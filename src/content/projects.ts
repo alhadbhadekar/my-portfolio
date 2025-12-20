@@ -762,24 +762,23 @@ export const projects: Project[] = [
     links: {
         github: "https://github.com/alhadbhadekar/Python_AI_ML_Diabetes_Prediction_Model"
     }
-    },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  },
+  {
+    slug: "rock-vs-mine-prediction",
+    title: "Rock vs Mine Prediction using Sonar Data",
+    category: "ML / Classification",
+    summary:
+        "Binary classification model that identifies underwater objects as rocks or mines using sonar signal data and Logistic Regression.",
+    stack: [
+        "Python",
+        "Scikit-learn",
+        "Pandas",
+        "NumPy"
+    ],
+    links: {
+        github: "https://github.com/alhadbhadekar/AI_ML_Rock-vs-Mine-Prediction"
+    }
+  },
 ];
 
 export const featuredProjects = projects.slice(0, 3);
