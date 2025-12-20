@@ -9,37 +9,37 @@ import { profile } from "@/content/profile";
 import { featuredProjects } from "@/content/projects";
 
 const HOME_SKILLS = [
-  { name: "Go", img: "/skills/go.svg" },
-  { name: "Python", img: "/skills/python.svg" },
-  { name: "Node.js", img: "/skills/nodejs.svg" },
-  { name: "TypeScript", img: "/skills/typescript.svg" },
-  { name: "LangGraph", img: "/skills/langgraph.png" },
-  { name: "LangChain", img: "/skills/langgraph.png" },
-  { name: "HuggingFace", img: "/skills/huggingface.svg" },
-  { name: "TensorFlow", img: "/skills/tensorflow.png" },
-  { name: "PyTorch", img: "/skills/pytorch.svg" },
-  { name: "Scikit-learn", img: "/skills/scikitlearn.svg" },
-  { name: "MLOps", img: "/skills/mlops.png" },
-  { name: "Kubernetes", img: "/skills/kubernetes.png" },
-  { name: "AWS", img: "/skills/aws.png" },
-  // { name: "GCP", img: "/skills/gcp.svg" },
-  // { name: "Azure", img: "/skills/azure.svg" },
-  { name: "Docker", img: "/skills/docker.png" },
-  { name: "Terraform", img: "/skills/terraform.svg" },
-  { name: "Helm", img: "/skills/helm.png" },
-  { name: "VictoriaMetrics", img: "/skills/victoriametrics.webp" },
-  { name: "gRPC", img: "/skills/grpc.webp" },
-  { name: "Rest API", img: "/skills/restapi.png" },
-  { name: "GraphQL", img: "/skills/graphql.png" },
-  { name: "Kafka", img: "/skills/kafka.png" },
-  { name: "Redis", img: "/skills/redis.svg" },
-  { name: "PostgreSQL", img: "/skills/postgres.png" },
-  { name: "MongoDB", img: "/skills/mongodb.png" },
-  { name: "Elasticsearch", img: "/skills/elasticsearch.svg" },
-  { name: "Kibana", img: "/skills/kibana.png" },
-  { name: "Grafana", img: "/skills/grafana.webp" },
-  { name: "Jenkins", img: "/skills/jenkins.png" },
-  { name: "Concourse", img: "/skills/concourse.svg" },
+  { name: "Go", img: "skills/go.svg" },
+  { name: "Python", img: "skills/python.svg" },
+  { name: "Node.js", img: "skills/nodejs.svg" },
+  { name: "TypeScript", img: "skills/typescript.svg" },
+  { name: "LangGraph", img: "skills/langgraph.png" },
+  { name: "LangChain", img: "skills/langgraph.png" },
+  { name: "HuggingFace", img: "skills/huggingface.svg" },
+  { name: "TensorFlow", img: "skills/tensorflow.png" },
+  { name: "PyTorch", img: "skills/pytorch.svg" },
+  { name: "Scikit-learn", img: "skills/scikitlearn.svg" },
+  { name: "MLOps", img: "skills/mlops.png" },
+  { name: "Kubernetes", img: "skills/kubernetes.png" },
+  { name: "AWS", img: "skills/aws.png" },
+  // { name: "GCP", img: "skills/gcp.svg" },
+  // { name: "Azure", img: "skills/azure.svg" },
+  { name: "Docker", img: "skills/docker.png" },
+  { name: "Terraform", img: "skills/terraform.svg" },
+  { name: "Helm", img: "skills/helm.png" },
+  { name: "VictoriaMetrics", img: "skills/victoriametrics.webp" },
+  { name: "gRPC", img: "skills/grpc.webp" },
+  { name: "Rest API", img: "skills/restapi.png" },
+  { name: "GraphQL", img: "skills/graphql.png" },
+  { name: "Kafka", img: "skills/kafka.png" },
+  { name: "Redis", img: "skills/redis.svg" },
+  { name: "PostgreSQL", img: "skills/postgres.png" },
+  { name: "MongoDB", img: "skills/mongodb.png" },
+  { name: "Elasticsearch", img: "skills/elasticsearch.svg" },
+  { name: "Kibana", img: "skills/kibana.png" },
+  { name: "Grafana", img: "skills/grafana.webp" },
+  { name: "Jenkins", img: "skills/jenkins.png" },
+  { name: "Concourse", img: "skills/concourse.svg" },
 ];
 
 export default function HomePage() {
@@ -96,11 +96,11 @@ export default function HomePage() {
 
             <div style={{ marginTop: "auto", paddingTop: 40, display: "flex", gap: 20, alignItems: "center" }}>
               <a href={profile.links.github} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--muted)" }}>
-                <img src="/skills/github.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
+                <img src="skills/github.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
                 Github
               </a>
               <a href={profile.links.linkedin} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--muted)" }}>
-                <img src="/skills/linkedin.svg" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
+                <img src="skills/linkedin.svg" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
                 LinkedIn
               </a>
             </div>
@@ -108,7 +108,7 @@ export default function HomePage() {
 
           <div className="card cardPad" style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ width: "100%", maxWidth: 320, aspectRatio: "3 / 4", borderRadius: 24, padding: 3, background: "linear-gradient(135deg, var(--brand), var(--brand-2))", boxShadow: "0 30px 80px rgba(0,0,0,0.45)", overflow: "hidden" }}>
-              <img src="/me.jpg" alt={profile.name} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 20 }} />
+              <img src="me.jpg" alt={profile.name} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 20 }} />
             </div>
           </div>
         </div>
