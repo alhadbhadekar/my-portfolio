@@ -1,65 +1,255 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useRef } from "react"; // Added useRef
+import Link from "next/link";
+import Image from "next/image";
+import Section from "@/components/Section";
+import ProjectCard from "@/components/ProjectCard";
+import { profile } from "@/content/profile";
+import { featuredProjects } from "@/content/projects";
+
+const HOME_SKILLS = [
+  { name: "Go", img: "/skills/go.svg" },
+  { name: "Python", img: "/skills/python.svg" },
+  { name: "Node.js", img: "/skills/nodejs.svg" },
+  { name: "TypeScript", img: "/skills/typescript.svg" },
+  { name: "LangGraph", img: "/skills/langgraph.png" },
+  { name: "LangChain", img: "/skills/langgraph.png" },
+  { name: "HuggingFace", img: "/skills/huggingface.svg" },
+  { name: "TensorFlow", img: "/skills/tensorflow.png" },
+  { name: "PyTorch", img: "/skills/pytorch.svg" },
+  { name: "Scikit-learn", img: "/skills/scikitlearn.svg" },
+  { name: "MLOps", img: "/skills/mlops.png" },
+  { name: "Kubernetes", img: "/skills/kubernetes.png" },
+  { name: "AWS", img: "/skills/aws.png" },
+  // { name: "GCP", img: "/skills/gcp.svg" },
+  // { name: "Azure", img: "/skills/azure.svg" },
+  { name: "Docker", img: "/skills/docker.png" },
+  { name: "Terraform", img: "/skills/terraform.svg" },
+  { name: "Helm", img: "/skills/helm.png" },
+  { name: "VictoriaMetrics", img: "/skills/victoriametrics.webp" },
+  { name: "gRPC", img: "/skills/grpc.webp" },
+  { name: "Rest API", img: "/skills/restapi.png" },
+  { name: "GraphQL", img: "/skills/graphql.png" },
+  { name: "Kafka", img: "/skills/kafka.png" },
+  { name: "Redis", img: "/skills/redis.svg" },
+  { name: "PostgreSQL", img: "/skills/postgres.png" },
+  { name: "MongoDB", img: "/skills/mongodb.png" },
+  { name: "Elasticsearch", img: "/skills/elasticsearch.svg" },
+  { name: "Kibana", img: "/skills/kibana.png" },
+  { name: "Grafana", img: "/skills/grafana.svg" },
+  { name: "Jenkins", img: "/skills/elasticsearch.svg" },
+  { name: "Concourse", img: "/skills/grafana.svg" },
+];
+
+export default function HomePage() {
+  // Create a ref for the scrollable container
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === "left" 
+        ? scrollLeft - clientWidth / 2 
+        : scrollLeft + clientWidth / 2;
+      
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      {/* ================= HERO ================= */}
+      <div className="hero">
+        <div className="heroGrid">
+          <div 
+            className="card cardPad" 
+            style={{ display: "flex", flexDirection: "column", minHeight: '100%' }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <p className="kicker">{profile.role}</p>
+            <h1 className="h1" style={{ marginTop: 6 }}>{profile.name}</h1>
+            <p className="lede" style={{ marginTop: 14 }}>{profile.tagline}</p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
+              {profile.pills.map((pill) => (
+                <span 
+                  key={pill} 
+                  className="kicker" 
+                  style={{ 
+                    padding: "4px 12px", 
+                    borderRadius: 20, 
+                    backgroundColor: "var(--panel-2)", 
+                    border: "1px solid var(--border)",
+                    fontSize: "12px",
+                    color: "var(--text)" 
+                  }}
+                >
+                  {pill}
+                </span>
+              ))}
+            </div>
+
+            <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
+              <Link className="btn btnPrimary" href="/projects">View Projects</Link>
+              <Link className="btn" href="/work">Work Timeline</Link>
+            </div>
+
+            <div style={{ marginTop: "auto", paddingTop: 40, display: "flex", gap: 20, alignItems: "center" }}>
+              <a href={profile.links.github} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--muted)" }}>
+                <img src="/skills/github.png" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
+                Github
+              </a>
+              <a href={profile.links.linkedin} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, color: "var(--muted)" }}>
+                <img src="/skills/linkedin.svg" alt="" style={{ width: 18, height: 18, opacity: 0.8 }} />
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div className="card cardPad" style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "100%", maxWidth: 320, aspectRatio: "3 / 4", borderRadius: 24, padding: 3, background: "linear-gradient(135deg, var(--brand), var(--brand-2))", boxShadow: "0 30px 80px rgba(0,0,0,0.45)", overflow: "hidden" }}>
+              <img src="/me.jpg" alt={profile.name} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 20 }} />
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+
+      {/* ================= SKILLS (IMAGES) WITH ARROWS ================= */}
+      <Section
+        title="Technical Expertise"
+        subtitle="Specializing in high-performance backends and production AI systems."
+      >
+        {/* Removed 'group' from style here */}
+        <div style={{ position: "relative" }} className="skillsContainer">
+          
+          {/* Left Arrow */}
+          <button 
+            onClick={() => scroll("left")}
+            aria-label="Scroll left"
+            style={{
+              position: "absolute", 
+              left: -20, 
+              top: "50%", 
+              transform: "translateY(-50%)",
+              zIndex: 10, 
+              background: "var(--panel-2)", 
+              border: "1px solid var(--border)",
+              borderRadius: "50%", 
+              width: 32, 
+              height: 32, 
+              cursor: "pointer", 
+              color: "var(--brand)",
+              display: "flex", 
+              alignItems: "center", 
+              justifyContent: "center", 
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              transition: "transform 0.2s ease" // Added a subtle transition
+            }}
+          >
+            ←
+          </button>
+
+          <div className="skillsScrollerWrapper">
+            <div 
+              className="skillsScroller" 
+              ref={scrollRef} 
+              style={{ 
+                scrollBehavior: "smooth", 
+                overflowX: "auto",
+                msOverflowStyle: 'none',  /* IE and Edge */
+                scrollbarWidth: 'none'    /* Firefox */
+              }}
+            >
+              {/* Optional: Add this CSS to your global file to hide scrollbars globally if desired */}
+              {/* .skillsScroller::-webkit-scrollbar { display: none; } */}
+              
+              {HOME_SKILLS.map((s) => (
+                <div key={s.name} className="skillItem">
+                  <img src={s.img} alt={s.name} />
+                  <span>{s.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Arrow */}
+          <button 
+            onClick={() => scroll("right")}
+            aria-label="Scroll right"
+            style={{
+              position: "absolute", 
+              right: -20, 
+              top: "50%", 
+              transform: "translateY(-50%)",
+              zIndex: 10, 
+              background: "var(--panel-2)", 
+              border: "1px solid var(--border)",
+              borderRadius: "50%", 
+              width: 32, 
+              height: 32, 
+              cursor: "pointer", 
+              color: "var(--brand)",
+              display: "flex", 
+              alignItems: "center", 
+              justifyContent: "center", 
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              transition: "transform 0.2s ease"
+            }}
+          >
+            →
+          </button>
+        </div>
+      </Section>
+
+      {/* ================= PROJECTS + QUICK LINKS ================= */}
+      <Section
+        title="Featured Work"
+        subtitle="High-impact projects ranging from distributed platforms to LLM infrastructure."
+      >
+        {/* Removed inline gridTemplateColumns to allow CSS to handle stacking */}
+        <div className="featured-layout" style={{ display: "grid", gap: 20 }}>
+          {/* Projects (Column 1) */}
+          <div className="grid3">
+            {featuredProjects.map((p, index) => (
+              <ProjectCard key={`home-${p.slug}-${index}`} project={p} />
+            ))}
+          </div>
+
+          {/* Quick Links / Explore More (Column 2) */}
+          <div className="card cardPad">
+            <p className="sectionTitle">Explore More</p>
+            <div style={{ display: "grid", gap: 12 }}>
+              <Link className="timelineItem" href="/bio">
+                <div className="titleRow">
+                  <span className="itemTitle">About Me</span>
+                  <span className="kicker">Bio</span>
+                </div>
+                <p className="itemSub">8+ years of engineering across Finance, Media, and AI. </p>
+              </Link>
+              <Link className="timelineItem" href="/skills">
+                <div className="titleRow">
+                  <span className="itemTitle">Full Stack</span>
+                  <span className="kicker">Skills</span>
+                </div>
+                <p className="itemSub">Go, Python, AWS, and MLOps breakdown.</p>
+              </Link>
+              <Link className="timelineItem" href="/contact">
+                <div className="titleRow">
+                  <span className="itemTitle">Let's Connect</span>
+                  <span className="kicker">Contact</span>
+                </div>
+                <p className="itemSub">Discuss systems, AI, or collaboration.</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ marginTop: 20 }}>
+          <Link className="btn" href="/projects">
+            See all projects →
+          </Link>
+        </div>
+      </Section>
+    </>
   );
 }
