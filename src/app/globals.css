@@ -68,7 +68,32 @@ a { color: inherit; text-decoration: none; }
     rgba(247,247,251,0.60)
   );
 }
-.navInner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  padding: 14px 0;
+}
+.nav .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.desktopNav .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
 .brand { display: flex; gap: 12px; align-items: center; }
 .badge {
   width: 36px; height: 36px; border-radius: 12px;
